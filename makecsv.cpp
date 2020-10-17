@@ -10,8 +10,11 @@ int main()
 {
     int FILE_SIZE;
     string unit;
+    string name;
     cout << "Input desired file size: ";
     cin >> FILE_SIZE >> unit;
+    cout << "Input csv file name: ";
+    cin >> name;
     
     transform(unit.begin(), unit.end(), unit.begin(), ::tolower);
     if(unit.compare("gb") == 0){
@@ -28,7 +31,7 @@ int main()
     }
 
     ofstream outfile;
-    outfile.open("one.csv");
+    outfile.open(name);
 
     const int MAX = 2147483647;
     int counter, random, sign, size=0;
